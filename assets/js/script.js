@@ -18,6 +18,19 @@ async function getStatus(e) {
     }
 }
 
+function displayException(data) {
+
+    let heading = `<div class="error-heading">An Exception Occurred</div>`;
+
+    results = `<div>The API returned status code ${data.status_code}</div>`;
+    results += `<div>Error number: <strong>${data.error_no}</strong></div>`;
+    results += `<div>Error text: <strong>${data.error}</strong></div>`;
+
+    document.getElementById("resultsModalTitle").innerText = heading;
+    document.getElementById("results-content").innerHTML = results;
+    resultsModal.show();
+}
+
 function displayStatus(data) {
     document.getElementById("resultsModalTitle").innerText = "API Key Status";
     document.getElementById("results-content").innerHTML = `<div>Your API key is valid until</div><div class="key-status">${data.expiry}</div>`;
