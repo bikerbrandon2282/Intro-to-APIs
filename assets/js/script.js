@@ -48,7 +48,6 @@ function processOptions(form) {
     form.append("options", optArray.join());
     return form;;
 }
-}
 
 async function postForm(e) {
     e.preventDefault();
